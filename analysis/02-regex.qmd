@@ -23,3 +23,11 @@ match <- numbers |>
     t4 = str_detect(number, pattern = "\\+?1?-?\\s?\\(?\\d{3}\\)?\\s?\\d{3}\\s?\\d{4}")
   )
 ```
+
+Other set of examples:
+
+```
+t1 = str_detect(number, pattern = "\\+1\\(\\d{3}\\)\\d{3}-\\d{4}"),
+t2 = str_detect(number, pattern = "\\+?1-?\\(?\\d{3}\\)?\\d{3}-?\\d{4}"),
+t3 = str_detect(number, pattern = "^\\+?1-?\\(?\\d{3}\\)?\\d{3}-?\\d{4}")
+```
