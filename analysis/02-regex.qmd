@@ -1,0 +1,25 @@
+---
+title: "RegEx"
+author: "DSCI 521"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+```{r}
+numbers <- read_csv(here("data/fake_numbers.csv"))
+numbers
+```
+
+```{r}
+match <- numbers |>
+  mutate(
+    t1 = str_detect(number, pattern = "\\d{10}"),
+    t2 = str_detect(number, pattern = "^\\d{10}$"),
+    t3 = str_detect(number, pattern = "^1?-?\\d{10}"),
+    t4 = str_detect(number, pattern = "\\+?1?-?\\s?\\(?\\d{3}\\)?\\s?\\d{3}\\s?\\d{4}")
+  )
+```
